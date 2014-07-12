@@ -8,9 +8,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.duotin.timelyhack.MainActivity$PlaceholderFragment" >
 
-    <TextView
+    <com.duotin.timelyhack.widget.CustomTextView
+        android:id="@+id/current_time_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+
+    <com.duotin.timelyhack.widget.CustomRelativeLayout
+        android:id="@+id/timer_container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_alignParentBottom="true" 
+        android:background="#cccccc">
+
+        <ImageView
+            android:id="@+id/pointer_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@android:drawable/ic_menu_send"
+            />
+    </com.duotin.timelyhack.widget.CustomRelativeLayout>
 
 </RelativeLayout>

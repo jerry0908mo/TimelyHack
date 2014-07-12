@@ -20,8 +20,8 @@ public interface OnTimeChangeListener {
 
 	/**
 	 * 时间改变函数
-	 * @param last 上一次的时间值
-	 * @param now 最新的时间值
+	 * @param last 上一次的时间值, 0-5940
+	 * @param now 最新的时间值, 0-5940
 	 */
 	void onTimeChanged(long last, long now);
 }
