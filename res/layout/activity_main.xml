@@ -1,16 +1,56 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:paddingBottom="@dimen/activity_vertical_margin"
+              android:paddingLeft="@dimen/activity_horizontal_margin"
+              android:paddingRight="@dimen/activity_horizontal_margin"
+              android:paddingTop="@dimen/activity_vertical_margin"
+              android:background="@android:color/background_light"
+              >
+
+<LinearLayout  
+    android:id="@+id/whole_sample"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.duotin.timelyhack.MainActivity$PlaceholderFragment" >
+              android:layout_height="wrap_content" 
+              android:orientation="horizontal">
+    <Button android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="ShowTime" />
+</LinearLayout>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
+<LinearLayout  
+    android:id="@+id/moudel_show"
+    android:layout_width="match_parent"
+              android:layout_height="wrap_content" 
+              android:layout_below="@id/whole_sample"
+              android:orientation="vertical">
+    <Button 
+        android:id="@+id/show_textview"
+        android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="showTextViewSample"
+              android:onClick="showTextViewSample" />
+    <Button 
+        android:id="@+id/show_dial_records_sample"
+        android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="showDialRecordsViewSample"
+              android:onClick="showDialRecordsViewSample"
+               />
+    <Button 
+        android:id="@+id/show_touch_sample"
+        android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="showCustomRelativeLayoutSample"
+              android:onClick="showCustomRelativeLayoutSample" />
+    <Button 
+        android:id="@+id/show_yeay_cirlce_sample"
+        android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="showYearCirlceWidgetSample"
+              android:onClick="showYearCirlceWidgetSample" />
+</LinearLayout>
+    
 </RelativeLayout>
