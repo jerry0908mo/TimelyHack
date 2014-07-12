@@ -18,7 +18,8 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ShowTime" />
+            android:text="ShowTime" 
+            android:onClick="showTimer"/>
     </LinearLayout>
 
     <LinearLayout
