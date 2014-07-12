@@ -13,6 +13,7 @@ import com.nineoldandroids.animation.ObjectAnimator;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
@@ -138,6 +139,7 @@ public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 		int min = (int)now % 60;
 		int m1 = (int) (min /10) ;
 		int m2 = (int) (min % 10) ;
+		Log.d(VIEW_LOG_TAG, String.format("%d,%d", m1, m2));
 		setTimeText(m1,m2,0,0);
 	}
 	
