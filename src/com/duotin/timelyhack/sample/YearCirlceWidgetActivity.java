@@ -25,7 +25,7 @@ public class YearCirlceWidgetActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_yearcircle);
+		setContentView(R.layout.activity_year_cirlce_sample);
 		timer = (YearCirlceWidget) findViewById(R.id.yearCirlceWidget1);
 		new timerseter().execute();
 	}
@@ -55,5 +55,7 @@ public class YearCirlceWidgetActivity extends Activity {
 		}
 
 	}
+
+
 
 }

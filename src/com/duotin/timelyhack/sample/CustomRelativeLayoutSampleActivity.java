@@ -7,8 +7,15 @@
  */
 package com.duotin.timelyhack.sample;
 
+import com.duotin.timelyhack.R;
+
 import android.app.Activity;
+import android.os.Bundle;
 
 public class CustomRelativeLayoutSampleActivity extends Activity {
-
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_touch_sample);
+	}
 }
