@@ -2,31 +2,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.duotin.timelyhack.MainActivity$PlaceholderFragment" >
+    android:paddingTop="@dimen/activity_vertical_margin" >
 
-    <com.duotin.timelyhack.widget.CustomTextView
-        android:id="@+id/current_time_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
-
-    <com.duotin.timelyhack.widget.CustomRelativeLayout
-        android:id="@+id/timer_container_layout"
+    <LinearLayout
+        android:id="@+id/whole_sample"
         android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:layout_alignParentBottom="true" 
-        android:background="#cccccc">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
 
-        <ImageView
-            android:id="@+id/pointer_iv"
-            android:layout_width="wrap_content"
+        <Button
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@android:drawable/ic_menu_send"
-            />
-    </com.duotin.timelyhack.widget.CustomRelativeLayout>
+            android:text="ShowTime" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/moudel_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/whole_sample"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/show_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showTextViewSample"
+            android:text="showTextViewSample" />
+
+        <Button
+            android:id="@+id/show_dial_records_sample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showDialRecordsViewSample"
+            android:text="showDialRecordsViewSample" />
+
+        <Button
+            android:id="@+id/show_touch_sample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showCustomRelativeLayoutSample"
+            android:text="showCustomRelativeLayoutSample" />
+
+        <Button
+            android:id="@+id/show_yeay_cirlce_sample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="showYearCirlceWidgetSample"
+            android:text="showYearCirlceWidgetSample" />
+    </LinearLayout>
 
 </RelativeLayout>

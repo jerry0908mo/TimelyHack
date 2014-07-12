@@ -13,6 +13,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
          >
+       
         <activity
             android:name="com.duotin.timelyhack.MainActivity"
             android:label="@string/app_name" >
@@ -22,6 +23,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+         <activity
+            android:name="com.duotin.timelyhack.sample.TimeyTextSampleActivity"
+            android:label="TimeyTextSampleActivity"/>
+         
+          <activity
+            android:name="com.duotin.timelyhack.sample.DialRecordsViewSampleActivity"
+            android:label="DialRecordsViewSampleActivity"/>
+          
+           <activity
+            android:name="com.duotin.timelyhack.sample.CustomRelativeLayoutSampleActivity"
+            android:label="CustomRelativeLayoutSampleActivity"/>
+           
+            <activity
+            android:name="com.duotin.timelyhack.sample.YearCirlceWidgetActivity"
+            android:label="YearCirlceWidgetActivity"/>
     </application>
 
 </manifest>
