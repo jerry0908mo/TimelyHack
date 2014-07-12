@@ -2,7 +2,7 @@
  * TimelyTextShow.java
  * @include classes:TimelyTextShow;interfaces:TimelyTextShow
  * @version 1.0.0
- * @data 2014年7月12日
+ * @data 2014骞�7���12���
  * @copyright Copyright (C) 2012-2020 DuoTin Network Technology Co.,LTD 
  */
 package com.duotin.timelyhack.widget;
@@ -24,7 +24,7 @@ import android.widget.LinearLayout;
  * @copyright Copyright (C) 2012-2020 DuoTin Network Technology Co.,LTD
  * @version   1.0.0
  * @history
- * jerrysher 2014年7月12日 下午4:49:18 
+ * jerrysher 2014骞�7���12��� 涓����4:49:18 
  */
 public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 	
@@ -83,11 +83,18 @@ public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 		setTimeText(0,0,0,0);
 	}
 	
+	public void setTimeText(boolean hasAnim,int m1, int m2, int  s1,int s2){
+		setObjAnim(hasAnim,objAnimM1, minuteFirstText, oldM1, m1);
+		setObjAnim(hasAnim,objAnimM2, minuteSecondText, oldM2, m2);
+		setObjAnim(hasAnim,objAnimS1, SecondsFirstText, oldS1, s1);
+		setObjAnim(hasAnim,objAnimS2, SecondsSecondText, oldS2, s2);
+	}
+	
 	public void setTimeText(int m1, int m2, int  s1,int s2){
-		setMinFirst(objAnimM1, minuteFirstText, oldM1, m1);
-		setMinFirst(objAnimM2, minuteSecondText, oldM2, m2);
-		setMinFirst(objAnimS1, SecondsFirstText, oldS1, s1);
-		setMinFirst(objAnimS2, SecondsSecondText, oldS2, s2);
+		setObjAnim(false,objAnimM1, minuteFirstText, oldM1, m1);
+		setObjAnim(false,objAnimM2, minuteSecondText, oldM2, m2);
+		setObjAnim(false,objAnimS1, SecondsFirstText, oldS1, s1);
+		setObjAnim(false,objAnimS2, SecondsSecondText, oldS2, s2);
 	}
 	
 	private int oldM1 = NO_VALUE;
@@ -100,19 +107,29 @@ public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 	private ObjectAnimator objAnimS1;
 	private ObjectAnimator objAnimS2;
 	
-	private void setMinFirst(ObjectAnimator objAnim , TimelyView view,int from, int to){
+	private void setObjAnim(boolean hasAnim,ObjectAnimator objAnim , TimelyView view,int from, int to){
 		objAnim = view.animate(from, to);
 		objAnim.setDuration(DURATION);
-		 if(objAnim != null){
-			 if( objAnim.isRunning()){
-				 objAnim.end();	 
-			 }
-			 objAnim.start(); 
-		 } 
+		if(hasAnim){
+			if(objAnim != null){
+				 if( objAnim.isRunning()){
+					 objAnim.end();	 
+				 }
+				 objAnim.start(); 
+			 } 
+		}else{
+			if(objAnim != null){
+				 if( objAnim.isRunning()){
+					 objAnim.end();	 
+				 }
+				 objAnim.setCurrentPlayTime(DURATION);
+			 } 
+		}
+		 
 	}
 	
 	public void test(int from, int to){
-		setMinFirst(objAnimS2, SecondsSecondText, from, to);
+		setObjAnim(false,objAnimS2, SecondsSecondText, from, to);
 	}
 
 
@@ -121,8 +138,8 @@ public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 	 * @see com.duotin.timelyhack.widget.OnTimeChangeListener#onTimeChanged(long, long)
 	 */
 	@Override
-	public void onTimeChanged(long last, long now) {
-		int h =   (int)now / 60;
+	public void onTimeChanged(int last, int now) {
+		int h =   now / 60;
 		int min = (int)now % 60;
 		int m1 = (int) (min /10) ;
 		int m2 = (int) (min % 10) ;
