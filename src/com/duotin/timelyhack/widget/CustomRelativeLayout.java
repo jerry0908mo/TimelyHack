@@ -7,6 +7,8 @@
  */
 package com.duotin.timelyhack.widget;
 
+import java.util.ArrayList;
+
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
@@ -27,6 +29,10 @@ public class CustomRelativeLayout extends RelativeLayout {
 	 * 当前时间值
 	 */
 	private long mCurrentTime;
+	
+	private long mLastTime;
+	
+	private ArrayList<OnTimeChangeListener> mOnTimeChangeListeners = new ArrayList<OnTimeChangeListener>();
 
 	/**
 	 * @param context
@@ -55,18 +61,38 @@ public class CustomRelativeLayout extends RelativeLayout {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
 	}
+	
+	/**
+	 * 注册时间改变监听器
+	 * @param listener
+	 */
+	public void registerTimeChangeListener(OnTimeChangeListener listener){
+		if(listener == null){
+			throw new NullPointerException("Error: the listener is Null.");
+		}
+		mOnTimeChangeListeners.add(listener);
+	}
+	
+	/**
+	 * 取消注册时间改变监听器
+	 * @param listener
+	 */
+	public void unregisterTimeChangeListener(OnTimeChangeListener listener){
+		if(listener == null){
+			throw new NullPointerException("Error: the listener is Null.");
+		}
+		mOnTimeChangeListeners.remove(listener);
+	}
 
 	/**
 	 * 设置当前的时间值
 	 * @param time
 	 */
 	public void setCurrentTime(long time){
+		mLastTime = mCurrentTime;
 		mCurrentTime = time;
-		for(int i=0; i<getChildCount(); i++){
-			View v = getChildAt(i);
-			if(v instanceof BaseView){
-				((BaseView)v).setCurrentTime(time);
-			}
+		for(OnTimeChangeListener listener : mOnTimeChangeListeners){
+			listener.onTimeChanged(mLastTime, time);
 		}
 	}
 	
