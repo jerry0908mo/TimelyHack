@@ -16,16 +16,6 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 
-/**
- * @name      TimelyTextShow
- * @desc      
- * @package   com.duotin.timelyhack.widget
- * @author    jerry@duotin.com
- * @copyright Copyright (C) 2012-2020 DuoTin Network Technology Co.,LTD
- * @version   1.0.0
- * @history
- * jerrysher 2014骞�7���12��� 涓����4:49:18 
- */
 public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 	
 	public static final int            DURATION       = 500;
@@ -40,7 +30,6 @@ public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 	private TimelyView SecondsFirstText;
 	private TimelyView SecondsSecondText;
 	
-	private volatile    ObjectAnimator objectAnimator = null;
 
 	/**
 	 * @desc
@@ -108,6 +97,12 @@ public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 	private ObjectAnimator objAnimS2;
 	
 	private void setObjAnim(boolean hasAnim,ObjectAnimator objAnim , TimelyView view,int from, int to){
+		if(from == -1){
+			from = 0;
+		}
+		if(to == -1){
+			to = 0;
+		}
 		objAnim = view.animate(from, to);
 		objAnim.setDuration(DURATION);
 		if(hasAnim){
