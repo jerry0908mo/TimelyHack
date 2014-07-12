@@ -27,7 +27,7 @@ public class TimeyTextSampleActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timelytext_sample);
+        setContentView(R.layout.activity_timelytime_sample);
         timelyView = (TimelyView) findViewById(R.id.textView1);
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         fromSpinner = (Spinner) findViewById(R.id.fromSpinner);
