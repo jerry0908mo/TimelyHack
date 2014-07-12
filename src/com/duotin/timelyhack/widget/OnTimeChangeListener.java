@@ -23,5 +23,5 @@ public interface OnTimeChangeListener {
 	 * @param last 上一次的时间值, 0-5940
 	 * @param now 最新的时间值, 0-5940
 	 */
-	void onTimeChanged(long last, long now);
+	void onTimeChanged(int last, int now);
 }

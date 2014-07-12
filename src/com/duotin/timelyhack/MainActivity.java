@@ -5,12 +5,14 @@ import android.os.Bundle;
 
 import com.duotin.timelyhack.widget.CustomRelativeLayout;
 import com.duotin.timelyhack.widget.CustomTextView;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.duotin.timelyhack.sample.CustomRelativeLayoutSampleActivity;
 import com.duotin.timelyhack.sample.DialRecordsViewSampleActivity;
+import com.duotin.timelyhack.sample.ShowTimerActivity;
 import com.duotin.timelyhack.sample.TimeyTextSampleActivity;
 import com.duotin.timelyhack.sample.YearCirlceWidgetActivity;
 
@@ -27,7 +29,7 @@ public class MainActivity extends Activity {
 	}
 	
 	public void showTimer(View view){
-		Intent intent  = new Intent(this,TimeyTextSampleActivity.class);
+		Intent intent  = new Intent(this,ShowTimerActivity.class);
 		startActivity(intent);
 	}
 	

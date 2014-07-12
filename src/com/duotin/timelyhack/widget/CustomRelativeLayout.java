@@ -35,12 +35,12 @@ public class CustomRelativeLayout extends RelativeLayout {
 	/**
 	 * 当前时间值
 	 */
-	private long mCurrentTime;
+	private int mCurrentTime;
 
 	/**
 	 * 上一次的时间值
 	 */
-	private long mLastTime;
+	private int mLastTime;
 
 	private ArrayList<OnTimeChangeListener> mOnTimeChangeListeners = new ArrayList<OnTimeChangeListener>();
 
@@ -137,13 +137,13 @@ public class CustomRelativeLayout extends RelativeLayout {
 			Log.d(VIEW_LOG_TAG, "--hour");
 			mCurrentTime -= mMaxValue;
 			mCurrentTime = mCurrentTime > 0 ? mCurrentTime : 0;
-		} else if ((mCurrentProgress - mLastProgress) < (10 - mMaxValue)){
+		} else if ((mCurrentProgress - mLastProgress) < (10 - mMaxValue) && mLastTime != 0){
 			Log.d(VIEW_LOG_TAG, "++hour");
 			mCurrentTime += mMaxValue;
 		} else {
 			if(mLastTime == 0 && mCurrentProgress > (mMaxValue / 2)){
 				Log.d(VIEW_LOG_TAG, "stop");
-			}else {
+			} else {
 				boolean increase = mCurrentProgress > mLastProgress;
 				int hours = (int) (mCurrentTime / 60);
 				mCurrentTime = hours * mMaxValue + progress;
@@ -163,7 +163,7 @@ public class CustomRelativeLayout extends RelativeLayout {
 	 */
 	public void setCurrentTime(long time) {
 		mLastTime = mCurrentTime;
-		mCurrentTime = time;
+		mCurrentTime = (int) time;
 		for (OnTimeChangeListener listener : mOnTimeChangeListeners) {
 			listener.onTimeChanged(mLastTime, mCurrentTime);
 		}

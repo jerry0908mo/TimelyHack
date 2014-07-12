@@ -14,7 +14,7 @@ import android.view.View;
 
 
 
-public class YearCirlceWidget extends View {
+public class YearCirlceWidget extends View implements OnTimeChangeListener{
 
 	private Paint paint;
 
@@ -62,7 +62,7 @@ public class YearCirlceWidget extends View {
 		for(int i=1 ; i<=circleCount;i++){
 			drawCircles(canvas,i);
 		}
-		drawCircleProgress(canvas,curCircleProgress);
+		drawCircleProgress(canvas, curCircleProgress);
 			
 	}
 	
@@ -133,6 +133,12 @@ public class YearCirlceWidget extends View {
 
 	public void setRoundWidth(float roundWidth) {
 		this.roundWidth = roundWidth;
+	}
+
+	@Override
+	public void onTimeChanged(int last, int now) {
+		// TODO Auto-generated method stub
+		setTime(now);
 	}
 
 

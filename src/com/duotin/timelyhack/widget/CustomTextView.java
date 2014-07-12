@@ -50,7 +50,7 @@ public class CustomTextView extends TextView implements OnTimeChangeListener{
 	}
 
 	@Override
-	public void onTimeChanged(long last, long now) {
+	public void onTimeChanged(int last, int now) {
 		// TODO Auto-generated method stub
 		setText(String.format("%d, %d", last, now));
 	}

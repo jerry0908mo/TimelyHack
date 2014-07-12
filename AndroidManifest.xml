@@ -24,6 +24,9 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name="com.duotin.timelyhack.sample.ShowTimerActivity"
+            android:label="ShowTimerActivity"/>
          <activity
             android:name="com.duotin.timelyhack.sample.TimeyTextSampleActivity"
             android:label="TimeyTextSampleActivity"/>
