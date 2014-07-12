@@ -35,7 +35,7 @@ public class TimeyTextSampleActivity extends Activity {
         fromSpinner = (Spinner) findViewById(R.id.fromSpinner);
         toSpinner = (Spinner) findViewById(R.id.toSpinner);
         mTimerTextView = (TimerTextView) findViewById(R.id.timer_show_view);
-        mTimerTextView.setTimeText(0, 2, 3, 1);
+        mTimerTextView.setTimeText(8, 2, 3, 1);
         mTimerTextView.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
