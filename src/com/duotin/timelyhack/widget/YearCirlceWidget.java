@@ -20,7 +20,6 @@ public class YearCirlceWidget extends View implements OnTimeChangeListener{
 
 	private int roundColor;
 	
-	
 	private int roundProgressColor;
 	
 	private float roundWidth;

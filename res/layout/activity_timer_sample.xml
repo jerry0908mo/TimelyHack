@@ -20,8 +20,7 @@
         android:id="@+id/timer_container_layout"
         android:layout_width="match_parent"
         android:layout_height="320dp"
-        android:layout_alignParentBottom="true"
-        >
+        android:layout_alignParentBottom="true" >
 
         <ImageView
             android:id="@+id/pointer_iv"
@@ -29,13 +28,23 @@
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_send" />
 
+        <com.duotin.timelyhack.widget.TimerTextView
+            android:id="@+id/timer_show_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" 
+            />
+
         <com.duotin.timelyhack.widget.YearCirlceWidget
             android:id="@+id/yearCirlceWidget1"
             android:layout_width="260dip"
             android:layout_height="260dip"
+            android:layout_centerInParent="true"
             android:layout_gravity="center"
             android_custom:roundColor="#D1D1D1"
-            android:layout_centerInParent="true"
             android_custom:roundProgressColor="#ff0000"
             android_custom:roundWidth="2dip" />
     </com.duotin.timelyhack.widget.CustomRelativeLayout>
