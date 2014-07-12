@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android_custom="http://schemas.android.com/apk/res/com.duotin.timelyhack"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+     >
+
+    
+
+    <com.duotin.timelyhack.widget.YearCirlceWidget
+        android:id="@+id/yearCirlceWidget1"
+        android:layout_width="260dip"
+        android:layout_height="260dip"
+        android:layout_gravity="center"
+        android_custom:roundColor="#D1D1D1"
+        android_custom:roundProgressColor="#ff0000"
+        android_custom:roundWidth="2dip" />
+
+</LinearLayout>
