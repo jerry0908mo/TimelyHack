@@ -81,9 +81,13 @@ public class TimerTextView extends LinearLayout implements OnTimeChangeListener{
 	
 	public void setTimeText(int m1, int m2, int  s1,int s2){
 		setObjAnim(false,objAnimM1, minuteFirstText, oldM1, m1);
+		oldM1 = m1;
 		setObjAnim(false,objAnimM2, minuteSecondText, oldM2, m2);
+		oldM2 = m2;
 		setObjAnim(false,objAnimS1, SecondsFirstText, oldS1, s1);
+		oldS1 = s1;
 		setObjAnim(false,objAnimS2, SecondsSecondText, oldS2, s2);
+		oldS2 = s2;
 	}
 	
 	private int oldM1 = NO_VALUE;
