@@ -7,13 +7,14 @@
  */
 package com.duotin.timelyhack.sample;
 
+import android.app.Activity;
+import android.os.Bundle;
+
 import com.duotin.timelyhack.R;
 import com.duotin.timelyhack.widget.CustomRelativeLayout;
 import com.duotin.timelyhack.widget.CustomTextView;
+import com.duotin.timelyhack.widget.TimerTextView;
 import com.duotin.timelyhack.widget.YearCirlceWidget;
-
-import android.app.Activity;
-import android.os.Bundle;
 
 public class ShowTimerActivity extends Activity {
 	
@@ -21,6 +22,7 @@ public class ShowTimerActivity extends Activity {
 	private CustomRelativeLayout mTimerLayout;
 	
 	private YearCirlceWidget mTotalCircleWidget;
+	private TimerTextView mTimerTextView;
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,8 +32,10 @@ public class ShowTimerActivity extends Activity {
         mTimerLayout = (CustomRelativeLayout) findViewById(R.id.timer_container_layout);
         mCurrentTimeTextView = (CustomTextView) findViewById(R.id.current_time_tv);
 		mTotalCircleWidget = (YearCirlceWidget) findViewById(R.id.yearCirlceWidget1);
+		mTimerTextView = (TimerTextView) findViewById(R.id.timer_show_view);
 		
 		mTimerLayout.registerTimeChangeListener(mCurrentTimeTextView);
 		mTimerLayout.registerTimeChangeListener(mTotalCircleWidget);
+		mTimerLayout.registerTimeChangeListener(mTimerTextView);
 	}
 }
