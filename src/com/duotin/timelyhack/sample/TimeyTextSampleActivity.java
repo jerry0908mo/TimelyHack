@@ -9,12 +9,14 @@ import android.widget.SeekBar;
 import android.widget.Spinner;
 
 import com.duotin.timelyhack.R;
+import com.duotin.timelyhack.widget.TimerTextView;
 import com.github.adnansm.timelytextview.TimelyView;
 import com.nineoldandroids.animation.ObjectAnimator;
 
 public class TimeyTextSampleActivity extends Activity {
     public static final int            DURATION       = 1000;
     public static final int            NO_VALUE       = -1;
+    private 			TimerTextView mTimerTextView = null;
     private             TimelyView     timelyView     = null;
     private             SeekBar        seekBar        = null;
     private             Spinner        fromSpinner    = null;
@@ -32,7 +34,16 @@ public class TimeyTextSampleActivity extends Activity {
         seekBar = (SeekBar) findViewById(R.id.seekBar);
         fromSpinner = (Spinner) findViewById(R.id.fromSpinner);
         toSpinner = (Spinner) findViewById(R.id.toSpinner);
+        mTimerTextView = (TimerTextView) findViewById(R.id.timer_show_view);
 
+        mTimerTextView.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				//mTimerTextView.test(0, 9);
+				mTimerTextView.setTimeText(0, 2, 3, 1);
+			}
+		});
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.from_numbers_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         fromSpinner.setAdapter(adapter);
